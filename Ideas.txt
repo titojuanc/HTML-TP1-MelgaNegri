@@ -1,0 +1,5 @@
+Ademas de home agregar:
+-Carrito
+-Modelos AIRV :: Producto
+-Perifericos (Extensiones)
+-Terminos y condiciones y FAQ
