@@ -1,3 +1,38 @@
+:root{
+    --colorCyanOscuro: #00a0c0;
+}
+
 #contaierFooter {
     border-color: black;
+}
+
+.img-logo{
+    max-height: 1%;
+    width: 1%;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.btn-cyanOscuro{
+    background-color: var(--colorCyanOscuro);
+    border-color: var(--colorCyanOscuro);
+
+}
+
+.text-cyanOscuro{
+    color: var(--colorCyanOscuro);
+}
+
+.caruselCaption{
+    left: 15%;
+    right: auto;
+    top: 50%;
+}
+
+.emailInsert{
+    border: var(--colorCyanOscuro);
+}
+
+.checkbox-text{
+    font-weight: 300;
 }

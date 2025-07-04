@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <img src="LOGO- AIRV.png" class="img-logo" alt="LOGO-">
+              <button class="navbar-toggler btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,7 +21,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link text-info" href="#">Link</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,10 +38,6 @@
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
               </div>
             </div>
           </nav>
@@ -58,21 +55,21 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="carrusel1-AIRV.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block  fs-3" style="left: 15%; right: auto; top: 50%;">
+            <div class="carousel-caption d-md-block  fs-3 caruselCaption">
               <h1 class="display-4 fw-bold">AIRV Slim</h1>
               <p>Simple y efectivo</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrusel2-AIRV.png" class="d-block w-100"  alt="...">
-            <div class="carousel-caption d-md-block fs-3" style="left: 15%; right: auto; top: 50%;">
+            <div class="carousel-caption d-md-block fs-3 caruselCaption">
               <h1 class="display-4 fw-bold">AIRV PRO</h1>
               <p>Asistencia al máximo</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="carrusel3-AIRV.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block text-dark fs-3" style="left: 15%; right: auto; top: 50%;">
+            <div class="carousel-caption d-md-block text-dark fs-3 caruselCaption">
               <h1 class="display-4 fw-bold">AIRV.</h1>
               <p>La experiencia base</p>
             </div>
@@ -91,22 +88,43 @@
       
       <div class="container py-5">
         <div class="row align-items-center">
-          
           <div class="col-md-6">
             <h1 class="display-4 fw-bold">Todo en un solo lugar</h1>
             <p class="lead text-secondary mt-4">
                 Elige tu modelo de AIRV que más se adapte a tus necesidades y descubre un nuevo mundo para tu hogar.
             </p>
-            <a href="#" class="text-primary fw-semibold text-decoration-none">Ver modelos disponibles</a>
+            <a href="#" class="text-info fw-semibold text-decoration-none">Ver modelos disponibles</a>
           </div>
-      
           <div class="col-md-6 text-center">
             <img src="3-AIRVS.png" alt="3_airv_models" class="img-fluid rounded">
           </div>
-      
         </div>
       </div>
       
+      <div class="container col-10 py-5">
+        <div class="card shadow border-3 border-info">
+          <div class="card-body">
+            <h1 class="card-text fw-bold py-3 text-center">
+              Entérate de nuevas promociones y noticias sobre AIRV
+            </h1>
+            <form action=""> 
+              <div class="mb-3 py-1">
+                <input type="email" class="form-control emailInsert" placeholder="Introduce tu correo electrónico..." aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text lead text-secondary">AIRV jamás compartirá tu información con terceros.</div>
+              </div>
+              <div class="mb-3 py-1 form-check">
+                <input type="checkbox" class="form-check-input border-info">
+                <label class="form-check-label checkbox-text text-secondary" for="exampleCheck1">Quiero recibir noticias acerca de nuevos productos de AIRV.</label>
+              </div>
+               <div class="mb-3 py-1 form-check">
+                <input type="checkbox" class="form-check-input border-info">
+                <label class="form-check-label checkbox-text text-secondary" for="exampleCheck1">Quiero recibir descuentos y promociones de los productos AIRV.</label>
+              </div>
+              <button type="submit" class="btn btn-info">Suscribirse</button>
+            </form>
+          </div>
+        </div>
+      </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
