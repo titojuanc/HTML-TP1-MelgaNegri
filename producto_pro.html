@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Producto - Pro</title>
+  <link rel="stylesheet" href="style_productooo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+</header>
+
+<main class="bg-light">
+
+  <div class="container my-5">
+    <div class="row bg-white p-4 rounded shadow">
+  <!-- Imagen -->
+  <div class="col-md-5 text-center">
+    <img id="producto-imagen" src="https://http2.mlstatic.com/D_NQ_NP_2X_708108-MLA74576805397_022024-F.webp" class="img-fluid rounded" alt="AIRV Slim" style="max-height: 300px;">
+  </div>
+
+  <!-- Info y consultas -->
+  <div class="col-md-7">
+    <div class="row">
+      <!-- Información del producto -->
+      <div class="col-lg-7">
+        <h5 class="fw-semibold">AIRV Pro</h5>
+        <p class="text-muted">Texto puesto en la tarjeta</p>
+
+        <div class="mb-2">
+          <span class="text-warning">★★★★★</span>
+          <small>(4951)</small>
+        </div>
+
+        <div>
+          <span class="text-decoration-line-through text-muted">$900.000</span>
+          <h3 class="text-success fw-bold">$450.000</h3>
+          <small class="text-success">50% OFF</small>
+          <p class="text-muted">Cuota simple en 6 cuotas de <strong>$150.000</strong></p>
+        </div>
+
+        <div class="mb-3">
+          <p><strong>Color:</strong> <span id="color-texto">Negro</span></p>
+          <button class="btn btn-outline-dark btn-sm me-2" onclick="cambiarImagen('negro')">Negro</button>
+          <button class="btn btn-outline-secondary btn-sm" onclick="cambiarImagen('blanco')">Blanco</button>
+        </div>
+
+        <p class="text-success">📦 Llega gratis mañana</p>
+
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" onclick="mostrarToast('Gracias por tu compra. En breve recibirás un correo de confirmación.')">Comprar ahora</button>
+          <button class="btn btn-outline-secondary" onclick="mostrarToast('Producto agregado al carrito.')">Agregar al carrito</button>
+        </div>
+
+      </div>
+
+      <!-- Consultas al vendedor -->
+      <div class="col-lg-5 mt-4 mt-lg-0 position-relative">
+        <h6>Consultá al vendedor</h6>
+        <textarea class="form-control mb-2" placeholder="Escribí tu pregunta..." rows="3"></textarea>
+        <button class="btn btn-outline-primary btn-sm w-100 mb-3" onclick="enviarConsulta()">Enviar consulta</button>
+
+        <div id="consulta-toast" class="toast align-items-center text-white bg-success border-0 position-absolute" role="alert" style="top: -60px; right: 0; z-index: 1050; display: none;">
+          <div class="d-flex">
+            <div class="toast-body" id="consulta-toast-text">
+              Consulta enviada.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="ocultarConsultaToast()"></button>
+          </div>
+        </div>
+
+
+        <div class="accordion" id="consultasSugeridas">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="consulta1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#respuesta1">
+                ¿La pantalla es táctil?
+              </button>
+            </h2>
+            <div id="respuesta1" class="accordion-collapse collapse" data-bs-parent="#consultasSugeridas">
+              <div class="accordion-body">
+                Sí, la pantalla integrada es táctil.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="consulta2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#respuesta2">
+                ¿Tiene mas funciones que su versión slim?
+              </button>
+            </h2>
+            <div id="respuesta2" class="accordion-collapse collapse" data-bs-parent="#consultasSugeridas">
+              <div class="accordion-body">
+                Sí, contiene mas funcionalidades, como mensajería Whatsapp.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="consulta3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#respuesta3">
+                ¿Se puede escuchar música por Spotify?
+              </button>
+            </h2>
+            <div id="respuesta3" class="accordion-collapse collapse" data-bs-parent="#consultasSugeridas">
+              <div class="accordion-body">
+                Sí, mediante la solicitud por voz.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- row interno -->
+  </div>
+</div>
+
+  </div>
+
+  <!-- Características -->
+  <div class="container my-5">
+    <h4 class="mb-4">Características del producto</h4>
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="feature-item"><span class="icono">🔊</span> Es inteligente: Sí</div>
+        <div class="feature-item"><span class="icono">📶</span> Con Wi-Fi: Sí</div>
+        <div class="feature-item"><span class="icono">🎙️</span> Con micrófono: Sí</div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-item"><span class="icono">🗣️</span> Control por voz: Sí</div>
+        <div class="feature-item"><span class="icono">💡</span> Con LED: No</div>
+        <div class="feature-item"><span class="icono">🔋</span> Batería: 8 h</div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-item"><span class="icono">💧</span> Resistente al agua: Sí</div>
+        <div class="feature-item"><span class="icono">📱</span> Con Bluetooth: Sí</div>
+        <div class="feature-item"><span class="icono">🖼️</span> Pantalla: Sí</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h6>Características principales</h6>
+        <table class="table table-bordered">
+          <tbody>
+            <tr><td>Marca</td><td>AIRV Tech</td></tr>
+            <tr><td>Modelo</td><td>AIRV Pro</td></tr>
+            <tr><td>Color</td><td id="color-tabla">Negro</td></tr>
+            <tr><td>Con asistente</td><td>Sí, AIRV</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6>Conectividad</h6>
+        <table class="table table-bordered">
+          <tbody>
+            <tr><td>Wi-Fi</td><td>Sí</td></tr>
+            <tr><td>Bluetooth</td><td>Sí</td></tr>
+            <tr><td>Puerto auxiliar</td><td>Sí</td></tr>
+            <tr><td>USB</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6>Sonido</h6>
+        <table class="table table-bordered">
+          <tbody>
+            <tr><td>Tipo de sonido</td><td>360°</td></tr>
+            <tr><td>Potencia</td><td>15 W</td></tr>
+            <tr><td>Micrófono integrado</td><td>Sí</td></tr>
+            <tr><td>Compatibilidad</td><td>Spotify</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<footer>
+</footer>
+
+<script>
+  function cambiarImagen(color) {
+    const img = document.getElementById('producto-imagen');
+    const colorTexto = document.getElementById('color-texto');
+    const colorTabla = document.getElementById('color-tabla');
+
+    if (color === 'negro') {
+      img.src = "https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_640.jpg";
+      colorTexto.innerText = "Negro";
+      colorTabla.innerText = "Negro";
+    } else if (color === 'blanco') {
+      img.src = "https://images.unsplash.com/photo-1581579185169-7f6f4d1c7c10?auto=format&fit=crop&w=800&q=60";
+      colorTexto.innerText = "Blanco";
+      colorTabla.innerText = "Blanco";
+    }
+  }
+</script>
+
+<script>
+  function cambiarImagen(color) {
+    const img = document.getElementById('producto-imagen');
+    const colorTexto = document.getElementById('color-texto');
+    const colorTabla = document.getElementById('color-tabla');
+
+    if (color === 'negro') {
+      img.src = "https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_640.jpg";
+      colorTexto.innerText = "Negro";
+      colorTabla.innerText = "Negro";
+    } else if (color === 'blanco') {
+      img.src = "https://images.unsplash.com/photo-1581579185169-7f6f4d1c7c10?auto=format&fit=crop&w=800&q=60";
+      colorTexto.innerText = "Blanco";
+      colorTabla.innerText = "Blanco";
+    }
+  }
+
+  function mostrarToast(mensaje) {
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.textContent = mensaje;
+
+    const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+    toast.show();
+  }
+</script>
+
+<script>
+  function enviarConsulta() {
+    const textarea = document.querySelector('textarea');
+    const mensaje = textarea.value.trim();
+    const toast = document.getElementById('consulta-toast');
+    const toastText = document.getElementById('consulta-toast-text');
+
+    if (mensaje === "") {
+      toastText.innerText = "⚠️ Escribí una consulta antes de enviar.";
+      toast.classList.remove("bg-success");
+      toast.classList.add("bg-danger");
+    } else {
+      toastText.innerText = "✅ Tu consulta fue enviada al vendedor.";
+      toast.classList.remove("bg-danger");
+      toast.classList.add("bg-success");
+      textarea.value = "";
+    }
+
+    toast.style.display = "block";
+
+    // Ocultar automáticamente en 3 segundos
+    setTimeout(() => {
+      toast.style.display = "none";
+    }, 3000);
+  }
+
+  function ocultarConsultaToast() {
+    document.getElementById('consulta-toast').style.display = "none";
+  }
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-msg">
+        Mensaje
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+.icono {
+      font-size: 1.2rem;
+      margin-right: 8px;
+}
+.feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+}
