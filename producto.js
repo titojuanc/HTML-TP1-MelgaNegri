@@ -100,11 +100,21 @@ function cambiarImagen(color) {
 
     mostrarToast("Producto agregado al carrito.");
   }
-
-  function recorrerCarrito(){
-
+  
+  function cambiarCantidad(index, delta) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  
+    carrito[index].cantidad += delta;
+  
+    if (carrito[index].cantidad <= 0) {
+      carrito.splice(index, 1);
+    }
+  
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito(); // recargar el modal
   }
   
+
   function mostrarCarrito() {
     const contenedor = document.getElementById("carrito-contenido");
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -127,7 +137,12 @@ function cambiarImagen(color) {
           <div class="col-8">
             <div class="card-body p-2">
               <h5 class="card-title mb-1">${producto.nombre}</h5>
-              <p class="card-text mb-2">${producto.precio}</p>
+              <p class="card-text mb-1">Precio: ${producto.precio}</p>
+              <div class="d-flex align-items-center mb-2">
+                <button class="btn btn-sm btn-outline-secondary me-2" onclick="cambiarCantidad(${index}, -1)">➖</button>
+                <span class="me-2"><strong>${producto.cantidad}</strong></span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="cambiarCantidad(${index}, 1)">➕</button>
+              </div>
               <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
             </div>
           </div>
@@ -135,5 +150,42 @@ function cambiarImagen(color) {
       `;
       contenedor.appendChild(item);
     });
-  }
+
+    let total = carrito.reduce((acc, prod) => {
+        const precioNum = parseFloat(prod.precio.replace(/\$/g, '').replace(/\./g, '').replace(',', '.'));
+        return acc + (precioNum * prod.cantidad);
+      }, 0);
+      
+      const totalElement = document.createElement("div");
+      totalElement.className = "text-end mt-3";
+      totalElement.innerHTML = `<h5>Total: $${total.toLocaleString("es-AR")}</h5>`;
+      contenedor.appendChild(totalElement);
+      
+    }
+    function Comprar() {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      
+        if (carrito.length === 0) {
+          mostrarToast("⚠️ No hay productos en el carrito.");
+          return;
+        }
+      
+        localStorage.removeItem("carrito");
+      
+        mostrarToast("✅ ¡Gracias por tu compra!");
+      
+        setTimeout(() => {
+          mostrarCarrito(); 
+          
+          const modalEl = document.getElementById("exampleModal");
+          const modalInstance = bootstrap.Modal.getInstance(modalEl);
+          if (modalInstance) {
+            modalInstance.hide();
+          }
+        }, 500);
+    };
+    
+      
+  
+  
   

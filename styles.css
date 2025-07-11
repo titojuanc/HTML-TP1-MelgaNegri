@@ -37,9 +37,7 @@
     font-weight: 300;
 }
 
-.btn{
-    &:hover,
-    &:focus {
-
-  }
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
 }
