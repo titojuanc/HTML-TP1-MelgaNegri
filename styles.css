@@ -7,8 +7,8 @@
 }
 
 .img-logo{
-    max-height: 1%;
-    width: 1%;
+    max-height: 2%;
+    width: 2%;
     min-height: 50px;
     min-width: 50px;
 }
@@ -35,4 +35,11 @@
 
 .checkbox-text{
     font-weight: 300;
+}
+
+.btn{
+    &:hover,
+    &:focus {
+
+  }
 }

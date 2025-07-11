@@ -6,11 +6,52 @@
   <title>Producto - Pro</title>
   <link rel="stylesheet" href="style_productooo.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-</header>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+            <div class="container-fluid">
+              <img src="imagenes/LOGO- AIRV.png" class="img-logo" alt="LOGO-">
+              <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon btn-info"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-around  w-100 mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-info fs-3" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-info fs-3" href="modelos.html">AIRVs</a>
+                  </li>
+                                    <li class="nav-item">
+                    <button type="button" class="nav-link text-info fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Carrito
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content border-info border-3">
+                          <div class="modal-header border-info border-3">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Artículos agregados</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>No hay artículos  agregados.</p>
+                            <!-- Script de las tarjetas -->
+                          </div>
+                          <div class="modal-footer border-info border-3">
+                            <button type="button" class="btn btn-cyanOscuro">Comprar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
 
 <main class="bg-light">
 
@@ -18,7 +59,7 @@
     <div class="row bg-white p-4 rounded shadow">
   <!-- Imagen -->
   <div class="col-md-5 text-center">
-    <img id="producto-imagen" src="https://http2.mlstatic.com/D_NQ_NP_2X_708108-MLA74576805397_022024-F.webp" class="img-fluid rounded" alt="AIRV Slim" style="max-height: 300px;">
+  <img id="producto-imagen" src="imagenes/AIRV_Pro.png" class="img-fluid rounded" alt="AIRV Slim" style="max-height: 300px;">
   </div>
 
   <!-- Info y consultas -->
@@ -27,7 +68,7 @@
       <!-- Información del producto -->
       <div class="col-lg-7">
         <h5 class="fw-semibold">AIRV Pro</h5>
-        <p class="text-muted">Texto puesto en la tarjeta</p>
+        <p class="text-muted">El AIRV mas potente hasta la fecha. Todas las funciones mejoradas</p>
 
         <div class="mb-2">
           <span class="text-warning">★★★★★</span>
@@ -178,86 +219,33 @@
 
 </main>
 
-<footer>
+<footer class="bg-info text-light py-4 mt-5">
+  <div class="container text-center col-10">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>Sobre AIRV</h5>
+        <p>Somos líderes en tecnología y periféricos de calidad para vos.</p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>Enlaces útiles</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="modelos.html" class="text-light text-decoration-none">Productos</a></li>
+          <li><a href="https://youtu.be/v_-QF6qJlCk?si=mF8c7MEQNOIyyxfi" class="text-light text-decoration-none">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contacto</h5>
+        <p>Email: AIRVCONSULTAS@airv.com</p>
+        <p>Tel: +54 9 11 1234-5678</p>
+      </div>
+    </div>
+    <hr class="bg-light">
+    <p class="mb-0">&copy; 2025 AIRV. Todos los derechos reservados.</p>
+  </div>
 </footer>
 
-<script>
-  function cambiarImagen(color) {
-    const img = document.getElementById('producto-imagen');
-    const colorTexto = document.getElementById('color-texto');
-    const colorTabla = document.getElementById('color-tabla');
-
-    if (color === 'negro') {
-      img.src = "https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_640.jpg";
-      colorTexto.innerText = "Negro";
-      colorTabla.innerText = "Negro";
-    } else if (color === 'blanco') {
-      img.src = "https://images.unsplash.com/photo-1581579185169-7f6f4d1c7c10?auto=format&fit=crop&w=800&q=60";
-      colorTexto.innerText = "Blanco";
-      colorTabla.innerText = "Blanco";
-    }
-  }
-</script>
-
-<script>
-  function cambiarImagen(color) {
-    const img = document.getElementById('producto-imagen');
-    const colorTexto = document.getElementById('color-texto');
-    const colorTabla = document.getElementById('color-tabla');
-
-    if (color === 'negro') {
-      img.src = "https://cdn.pixabay.com/photo/2023/03/16/08/42/camping-7856198_640.jpg";
-      colorTexto.innerText = "Negro";
-      colorTabla.innerText = "Negro";
-    } else if (color === 'blanco') {
-      img.src = "https://images.unsplash.com/photo-1581579185169-7f6f4d1c7c10?auto=format&fit=crop&w=800&q=60";
-      colorTexto.innerText = "Blanco";
-      colorTabla.innerText = "Blanco";
-    }
-  }
-
-  function mostrarToast(mensaje) {
-    const toastMsg = document.getElementById('toast-msg');
-    toastMsg.textContent = mensaje;
-
-    const toast = new bootstrap.Toast(document.getElementById('liveToast'));
-    toast.show();
-  }
-</script>
-
-<script>
-  function enviarConsulta() {
-    const textarea = document.querySelector('textarea');
-    const mensaje = textarea.value.trim();
-    const toast = document.getElementById('consulta-toast');
-    const toastText = document.getElementById('consulta-toast-text');
-
-    if (mensaje === "") {
-      toastText.innerText = "⚠️ Escribí una consulta antes de enviar.";
-      toast.classList.remove("bg-success");
-      toast.classList.add("bg-danger");
-    } else {
-      toastText.innerText = "✅ Tu consulta fue enviada al vendedor.";
-      toast.classList.remove("bg-danger");
-      toast.classList.add("bg-success");
-      textarea.value = "";
-    }
-
-    toast.style.display = "block";
-
-    // Ocultar automáticamente en 3 segundos
-    setTimeout(() => {
-      toast.style.display = "none";
-    }, 3000);
-  }
-
-  function ocultarConsultaToast() {
-    document.getElementById('consulta-toast').style.display = "none";
-  }
-</script>
-
-
-
+<script src="producto.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
