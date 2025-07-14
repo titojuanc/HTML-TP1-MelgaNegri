@@ -1,9 +1,15 @@
+// DESCARGAR LAS DEPENDENCIAS ANTES DE CORRER
+// npm install express
+// npm install mysql
+// npm install body-parser
+// npm install path
+
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-const port = 3000;
+const port = 5500;
 
 function transformar(x){
   if (x == "on"){
