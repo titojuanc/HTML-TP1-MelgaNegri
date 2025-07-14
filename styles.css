@@ -13,6 +13,10 @@
     min-width: 50px;
 }
 
+.img-banner{
+    width: 100%;
+}
+
 .btn-cyanOscuro{
     background-color: var(--colorCyanOscuro);
     border-color: var(--colorCyanOscuro);
