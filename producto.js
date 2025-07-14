@@ -97,8 +97,6 @@ function cambiarImagen(color) {
     
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
-
-    mostrarToast("Producto agregado al carrito.");
   }
   
   function cambiarCantidad(index, delta) {
