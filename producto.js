@@ -143,7 +143,6 @@ function cambiarImagen(color) {
                 <span class="me-2"><strong>${producto.cantidad}</strong></span>
                 <button class="btn btn-sm btn-outline-secondary" onclick="cambiarCantidad(${index}, 1)">➕</button>
               </div>
-              <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
             </div>
           </div>
         </div>
