@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, '..')));
 
  
 app.get('/insertar', (req, res) => {
-  console.log("Hola!");
+  console.log("Consiguió los datos ");
   const { mail, noticias, promos } = req.query;
   const sql = 'INSERT INTO Mails (mail, noticias, promos) VALUES (?, ?, ?)';
   db.query(sql, [mail, transformar(noticias), transformar(promos)], (err, result) => {
@@ -43,6 +43,7 @@ app.get('/insertar', (req, res) => {
       console.error('Error al insertar:', err);
       res.status(500).send('Error al insertar en la base de datos');
     } else {
+      console.log("Datos: ", mail, noticias, promos);
       res.redirect('../index.html');
     }
   });

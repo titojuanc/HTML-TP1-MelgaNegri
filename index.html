@@ -108,7 +108,7 @@
             <p class="lead text-secondary mt-4">
                 Elige tu modelo de AIRV que más se adapte a tus necesidades y descubre un nuevo mundo para tu hogar.
             </p>
-            <a href="#" class="text-info fw-semibold text-decoration-none">Ver modelos disponibles</a>
+            <a href="modelos.html" class="text-info fw-semibold text-decoration-none">Ver modelos disponibles</a>
           </div>
           <div class="col-md-6 text-center">
             <img src="imagenes/3-AIRVS.png" alt="3_airv_models" class="img-fluid rounded">
@@ -116,6 +116,8 @@
         </div>
       </div>
       
+      <iframe id="form-redirect"></iframe>
+
       <div class="container col-10 py-5">
         <div class="card shadow border-3 border-info">
           <div class="card-body">
@@ -124,9 +126,9 @@
             </h1>
 
             <!-- ES NECESARIO CORRER EL HTML POR LIVE SERVER PARA QUE FUNCIONE -->
-            <form action="http://127.0.0.1:5500/insertar" method="GET"> 
+            <form action="http://127.0.0.1:5500/insertar" method="GET" id="formidable"> 
               <div class="mb-3 py-1">
-                <input type="email" class="form-control emailInsert" placeholder="Introduce tu correo electrónico..."  name="mail">
+                <input type="email" class="form-control emailInsert" placeholder="Introduce tu correo electrónico..."  name="mail" required>
                 <div id="emailHelp" class="form-text lead text-secondary">AIRV jamás compartirá tu información con terceros.</div>
               </div>
               <div class="mb-3 py-1 form-check">
@@ -138,7 +140,7 @@
                 <label class="form-check-label checkbox-text text-secondary" for="exampleCheck1">Quiero recibir descuentos y promociones de los productos AIRV.</label>
               </div>
               <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-cyanOscuro">Suscribirse</button>
+                <button id="toast-msg" onclick="mostrarToast('Formulario enviado correctamente')" type="submit" class="btn btn-cyanOscuro">Suscribirse</button>
               </div>
             </form>
           </div>
@@ -157,8 +159,10 @@
             <h5>Enlaces útiles</h5>
             <ul class="list-unstyled">
               <li><a href="index.html" class="text-light text-decoration-none">Inicio</a></li>
-              <li><a href="modelos.html" class="text-light text-decoration-none">Productos</a></li>
+              <li><a href="https://politecnicomodelo-my.sharepoint.com/:w:/g/personal/alumno26_melgarejo_juan_ipm_edu_ar/EYnQ7CFsN21MpCU4MyrBmFMBFTWoL3C7JifOdycmGunWTA?e=okAydV" class="text-light text-decoration-none">Documentación</a></li>
               <li><a href="https://youtu.be/v_-QF6qJlCk?si=mF8c7MEQNOIyyxfi" class="text-light text-decoration-none">Contacto</a></li>
+              <li><a href="index.html" class="text-light text-decoration-none">Linkedin</a></li>
+              <li><a href="index.html" class="text-light text-decoration-none">Instagram</a></li>
             </ul>
           </div>
           <div class="col-md-4">
@@ -174,6 +178,15 @@
 
     <script src="producto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-</body>
+
+    <div id="consulta-toast" class="toast align-items-center text-white bg-success border-0 position-absolute" role="alert" style="top: -60px; right: 0; z-index: 1050; display: none;">
+          <div class="d-flex">
+            <div class="toast-body" id="consulta-toast-text">
+              Formulario enviado correctamente.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="ocultarConsultaToast()"></button>
+          </div>
+        </div>
+  </body>
 
 </html>
